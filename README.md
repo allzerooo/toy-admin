@@ -13,3 +13,12 @@
 * OrderDetail
 * OrderGroup
 * Partner
+
+### Repository
+* AdminUserRepository
+* UserRepository
+* CategoryRepository
+* ItemRepository
+* OrderDetailRepository
+* OrderGroupRepository
+* PartnerRepository
