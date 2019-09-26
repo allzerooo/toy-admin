@@ -41,3 +41,8 @@
 ### `createdAt`, `createdBy`, `updatedAt`, `updatedBy` 자동화 하기
 * JPA `@EnableJpaAuditing`
 * 로그인된 User에 대해 `AuditorAware`를 구현한 컴포넌트를 사용
+
+<br/>
+
+### Lombok를 이용한 생성자 패턴
+* `@Builder`, `@Accessors`를 사용해 Entity를 생성, 수정
