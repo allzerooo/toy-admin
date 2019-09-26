@@ -27,9 +27,13 @@ public class OrderGroup {
 
     private String revAddress;
 
+    private String revName;
+
     private String paymentType; // 카드 / 현금
 
     private BigDecimal totalPrice;
+
+    private Integer totalQuantity;
 
     private LocalDateTime orderAt;
 
@@ -42,5 +46,7 @@ public class OrderGroup {
     private LocalDateTime updatedAt;
 
     private String updatedBy;
+
+    private Long userId;
 
 }

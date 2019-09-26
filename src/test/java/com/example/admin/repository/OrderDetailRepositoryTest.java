@@ -6,9 +6,11 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-public class orderDetailRepositoryTest extends AdminApplicationTests {
+
+public class OrderDetailRepositoryTest extends AdminApplicationTests {
 
     @Autowired
     private OrderDetailRepository orderDetailRepository;
@@ -17,13 +19,14 @@ public class orderDetailRepositoryTest extends AdminApplicationTests {
     public void create() {
         OrderDetail orderDetail = new OrderDetail();
 
-        orderDetail.setOrderAt(LocalDateTime.now());
-
-        // 어떤 사람의 id가 필요
-//        orderDetail.setUserId(1L);
-
-        // 어떤 상품의 id가 필요
-//        orderDetail.setItemId(1L);
+        orderDetail.setStatus("WAITING");
+        orderDetail.setArrivalDate(LocalDateTime.now().plusDays(2));
+        orderDetail.setQuantity(1);
+        orderDetail.setTotalPrice(BigDecimal.valueOf(900000));
+        orderDetail.setCreatedAt(LocalDateTime.now());
+        orderDetail.setCreatedBy("AdminServer");
+        orderDetail.setOrderGroupId(1L);    // 어떤 장바구니에
+        orderDetail.setItemId(1L);  // 어떤 상품
 
         OrderDetail newOrderDetail = orderDetailRepository.save(orderDetail);
         Assert.assertNotNull(newOrderDetail);
@@ -31,8 +34,6 @@ public class orderDetailRepositoryTest extends AdminApplicationTests {
 
     @Test
     public void read() {
-
-
 
     }
 }
