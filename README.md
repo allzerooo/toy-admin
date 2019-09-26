@@ -5,6 +5,8 @@
 3. 신규 주문, 신규 유저, 신규 파트너, 신규 상품을 볼 수 있는 대시보드를 제공
 4. 고객 관리, 상품 관리, 파트너사 관리, 주문 관리, 카테고리 관리, Admin 사용자 관리 메뉴를 제공
 
+<br/>
+
 ### Entity ( Table )
 * AdminUser
 * User
@@ -14,6 +16,8 @@
 * OrderGroup
 * Partner
 
+<br/>
+
 ### Repository
 * AdminUserRepository
 * UserRepository
@@ -22,3 +26,12 @@
 * OrderDetailRepository
 * OrderGroupRepository
 * PartnerRepository
+
+<br/>
+
+### JPA Entity Relationship
+* User 1 : N OrderGroup
+* OrderGroup 1 : N OrderDetail
+* Item 1 : N OrderDetail
+* Partner 1 : N Item
+* Category 1 : N Partner
