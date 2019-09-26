@@ -35,3 +35,9 @@
 * Item 1 : N OrderDetail
 * Partner 1 : N Item
 * Category 1 : N Partner
+
+<br/>
+
+### `createdAt`, `createdBy`, `updatedAt`, `updatedBy` 자동화 하기
+* JPA `@EnableJpaAuditing`
+* 로그인된 User에 대해 `AuditorAware`를 구현한 컴포넌트를 사용
