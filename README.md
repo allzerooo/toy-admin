@@ -1,4 +1,8 @@
 # Admin Site
+> 패스트캠퍼스 강의 프로젝트
+
+<br/>
+
 ### 목표
 1. 사용자가 쇼핑물에서 아이템을 구매하거나, 관리자가 외부 업체를 관리하는 Admin Site
 2. 1000명의 유저와 구매 내역이 5000개가 넘는 데이터를 다룸
@@ -38,7 +42,7 @@
 
 <br/>
 
-### `createdAt`, `createdBy`, `updatedAt`, `updatedBy` 자동화 하기
+### 생성일, 생성한 대상, 수정일, 수정한 대상 자동화 하기
 * JPA `@EnableJpaAuditing`
 * 로그인된 User에 대해 `AuditorAware`를 구현한 컴포넌트를 사용
 
