@@ -11,6 +11,7 @@
 
 <br/>
 
+## Entity 및 Repository 설정
 ### Entity ( Table )
 * AdminUser
 * User
@@ -20,7 +21,6 @@
 * OrderGroup
 * Partner
 
-<br/>
 
 ### Repository
 * AdminUserRepository
@@ -31,22 +31,34 @@
 * OrderGroupRepository
 * PartnerRepository
 
-<br/>
 
-### JPA Entity Relationship
+### Entity Relationship
 * User 1 : N OrderGroup
 * OrderGroup 1 : N OrderDetail
 * Item 1 : N OrderDetail
 * Partner 1 : N Item
 * Category 1 : N Partner
 
-<br/>
 
 ### 생성일, 생성한 대상, 수정일, 수정한 대상 자동화 하기
 * JPA `@EnableJpaAuditing`
 * 로그인된 User에 대해 `AuditorAware`를 구현한 컴포넌트를 사용
 
-<br/>
 
 ### Lombok를 이용한 생성자 패턴
 * `@Builder`, `@Accessors`를 사용해 Entity를 생성, 수정
+
+
+<br/>
+
+## API
+
+### Response Body 공통 속성
+
+|    속성     |     타입      |      설명       |
+| :---------: | :-----------: | :-------------: |
+| transaction | LocalDateTime |  API 통신 시간  |
+| resultCode  |    String     |  API 응답 코드  |
+| description |    String     |  API 부가 설명  |
+|    Data     |    Generic    | API 응답 데이터 |
+
