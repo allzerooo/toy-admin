@@ -55,17 +55,17 @@
 
 ### 사용자 API Request - create
 
-| Path Parameter Level 1 | Path Parameter Level 2 |   타입   | 필수 여부 |           설명           |
-| :--------------------: | :--------------------: | :------: | :-------: | :----------------------: |
-|    transaction_time    |                        | datetime |     Y     |      통신 발생 시간      |
-|          data          |                        |  object  |     Y     |      요청 Body 부분      |
-|                        |        account         |  string  |           |       사용자 계정        |
-|                        |        password        |  string  |           |         비밀번호         |
-|                        |         status         |  string  |           | REGISTERED / UNREGISTERD |
-|                        |         email          |  string  |           |          이메일          |
-|                        |      phone_number      |  string  |           |   - 가 포함된 전화번호   |
-|                        |     registered_at      | datetime |           |   없는 경우 "" or null   |
-|                        |    unregistered_at     | datetime |           |   없는 경우 "" or null   |
+| Path<br />Parameter Level 1 | Path<br />Parameter Level 2 |   타입   | 필수 여부 |           설명           |
+| :-------------------------: | :-------------------------: | :------: | :-------: | :----------------------: |
+|      transaction_time       |                             | datetime |     Y     |      통신 발생 시간      |
+|            data             |                             |  object  |     Y     |      요청 Body 부분      |
+|                             |           account           |  string  |           |       사용자 계정        |
+|                             |          password           |  string  |           |         비밀번호         |
+|                             |           status            |  string  |           | REGISTERED / UNREGISTERD |
+|                             |            email            |  string  |           |          이메일          |
+|                             |        phone_number         |  string  |           |   - 가 포함된 전화번호   |
+|                             |        registered_at        | datetime |           |   없는 경우 "" or null   |
+|                             |       unregistered_at       | datetime |           |   없는 경우 "" or null   |
 
 ### 사용자 API Response - create
 
