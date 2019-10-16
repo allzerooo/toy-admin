@@ -6,6 +6,7 @@ import com.example.admin.model.network.Header;
 import com.example.admin.model.network.request.UserApiRequest;
 import com.example.admin.model.network.response.UserApiResponse;
 import com.example.admin.repository.UserRepository;
+import jdk.javadoc.internal.doclets.formats.html.markup.Head;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -80,8 +81,18 @@ public class UserApiLogicService implements CrudInterface<UserApiRequest, UserAp
 
     @Override
     public Header delete(Long id) {
-        return null;
+        // 1. id -> repository -> user
+        Optional<User> optional = userRepository.findById(id);
+
+        // 2. repository -> delete
+        return optional.map(user -> {
+            userRepository.delete(user);
+
+            return Header.OK();
+        })
+        .orElseGet(()->Header.ERROR("데이터 없음"));
     }
+
 
     // 여러 메서드에서 공통으로 사용되는 Response Object return method
     // user object -> create userApiResponse -> return
